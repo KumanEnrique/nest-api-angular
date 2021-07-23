@@ -1,0 +1,18 @@
+<div class="row my-4">
+    <div class="col-lg-3 mb-3" *ngFor="let product of products">
+        <div class="card text-center">
+            <div class="card-header">
+                <h3>{{product.name}}</h3>
+                <h3>{{product.price}}</h3>
+                <h3>{{product.description}}</h3>
+            </div>
+            <div class="card-body">
+                <img [src]="product.imageURL" class="img-fluid">
+            </div>
+            <div class="card-footer">
+                <button class="btn btn-danger m-1" (click)="deleteProduct(product._id)">Delete</button>
+                <button class="btn btn-secondary" [routerLink]="['/product/edit',product._id]">Update</button>
+            </div>
+        </div>
+    </div>
+</div>
